@@ -10,6 +10,6 @@ jobs:
         with:
           python-version: 3.8
           cache: 'poetry'
-        run: poetry install
+      - run: poetry install
       - name: Run unit tests
         run: poetry run pytest
