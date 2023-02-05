@@ -23,6 +23,5 @@ jobs:
 
       - name: PyPI Publish
         run: |
-          source .venv/bin/activate
           poetry publish --build --username __token__ --password ${{ secrets.PYPI_PASSWORD }}
       
