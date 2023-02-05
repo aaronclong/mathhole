@@ -2,6 +2,7 @@ from typing import Generic, Union, List, Iterable, TypeVar
 
 
 MData = TypeVar('MData', bound=Union[int, float])
+MathTypes = Union[int, float, 'Matrix']
 
 
 class Matrix(Generic[MData]):
@@ -34,7 +35,7 @@ class Matrix(Generic[MData]):
         for idx in range(start, end):
             yield self.data[idx]
     
-    def __mul__(self, other: Union[MData, 'Matrix']):
+    def __mul__(self, other: MathTypes):
         if isinstance(other, float) or isinstance(other, int):
             values = [d * other for d in self.data]
             return Matrix(self.column_count, values)
@@ -51,7 +52,7 @@ class Matrix(Generic[MData]):
 
         return Matrix(other.column_count, values)
     
-    def __rmul__(self, other: Union[MData, 'Matrix']):
+    def __rmul__(self, other: MathTypes):
         return self.__mul__(other)
     
     def __reduce(self, items):
