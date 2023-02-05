@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mathhole"
-version = "0.0.1"
+version = "0.0.2"
 description = "An extremely bad, unintelligent math library for a moron to learn. Please don't use and if you do, it is at your own risk."
 readme = "README.md"
 homepage = "https://github.com/aaronclong/mathhole"
